@@ -6,12 +6,16 @@ import * as serviceWorker from './serviceWorker';
 
 let model = { clicks:0 };
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App clicks= {model.clicks} onClick={()=>{model.clicks+=1;}} />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function render(){
+  ReactDOM.render(
+    <React.StrictMode>
+      <App clicks= {model.clicks} onClick={()=>{model.clicks+=1; render();}} />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
+
+render();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
