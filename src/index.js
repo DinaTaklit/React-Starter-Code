@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+let model = { clicks:0 };
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App clicks= {model.clicks} />
   </React.StrictMode>,
   document.getElementById('root')
 );
