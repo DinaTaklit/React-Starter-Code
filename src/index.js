@@ -6,10 +6,9 @@ import * as serviceWorker from './serviceWorker';
 
 let model = { clicks:0 };
 
-
 ReactDOM.render(
   <React.StrictMode>
-    <App clicks= {model.clicks} />
+    <App clicks= {model.clicks} onClick={()=>{model.clicks+=1;}} />
   </React.StrictMode>,
   document.getElementById('root')
 );
